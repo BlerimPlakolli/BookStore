@@ -11,7 +11,7 @@ public class BookController {
 	@RequestMapping("/index")
 	public String nameOfBookStore() {
 		
-		return "Science Book Store";
+		return "Blerim Plakolli Science Book Store";
 	}
 
 }
