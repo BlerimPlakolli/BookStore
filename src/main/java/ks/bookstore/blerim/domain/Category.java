@@ -15,6 +15,15 @@ public class Category {
 	
 	
 	
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Category(String name) {
+		super();
+		this.name = name;
+	}
 	public Long getId() {
 		return id;
 	}
