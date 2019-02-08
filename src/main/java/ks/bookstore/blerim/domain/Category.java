@@ -1,9 +1,13 @@
 package ks.bookstore.blerim.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -12,7 +16,9 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String name;
-	
+		
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="id")
+	private List<Book> books;
 	
 	
 	public Category() {

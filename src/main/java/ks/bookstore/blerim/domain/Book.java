@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -18,6 +20,9 @@ public class Book {
 	private String author, title, isbn;
 	private int year;
 	
+	@ManyToOne
+	@JoinColumn(name = "categoryid")
+	private Category category;
 	
 	public Book() {
 		super();
@@ -25,12 +30,13 @@ public class Book {
 	}
 
 
-	public Book(String author, String title, String isbn, int year) {
+	public Book(String author, String title, String isbn, int year, Category category) {
 		super();
 		this.author = author;
 		this.title = title;
 		this.isbn = isbn;
 		this.year = year;
+		this.category = category;
 	}
 
 
@@ -81,6 +87,16 @@ public class Book {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 	
